@@ -20,6 +20,8 @@ vp run ci           # everything CI runs
 ```
 
 A pre-commit hook (`.vite-hooks/`) runs `vp check --fix` on staged files.
+Only the hook itself is tracked — the shims and `core.hooksPath` are local to
+each clone, so run `vp config` once after cloning to activate it.
 
 ## Adding projects
 
@@ -62,4 +64,5 @@ Defined in `pnpm-workspace.yaml`:
 - `engineStrict` — Node version mismatch fails instead of warning
 
 CI (`.github/workflows/ci.yml`) uses least-privilege permissions, SHA-pinned
-actions, and a frozen lockfile. Dependabot runs weekly with a 7-day cooldown.
+actions, and a frozen lockfile. Dependabot runs weekly with a 4-day cooldown
+matching `minimumReleaseAge`.

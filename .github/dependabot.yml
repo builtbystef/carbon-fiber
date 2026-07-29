@@ -4,9 +4,9 @@ updates:
     directory: /
     schedule:
       interval: weekly
-    # Mirrors pnpm's minimumReleaseAge: don't propose versions younger than a week.
+    # Mirrors pnpm's minimumReleaseAge (5760 min): don't propose versions younger than 4 days.
     cooldown:
-      default-days: 7
+      default-days: 4
     groups:
       dev-dependencies:
         dependency-type: development
