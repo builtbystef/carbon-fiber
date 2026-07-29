@@ -1,6 +1,8 @@
 {
   "name": "carbon-fiber",
   "private": true,
+  "license": "MIT",
+  "author": "builtbystef",
   "type": "module",
   "scripts": {
     "check": "vp check",

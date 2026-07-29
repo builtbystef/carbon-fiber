@@ -66,3 +66,7 @@ Defined in `pnpm-workspace.yaml`:
 CI (`.github/workflows/ci.yml`) uses least-privilege permissions, SHA-pinned
 actions, and a frozen lockfile. Dependabot runs weekly with a 4-day cooldown
 matching `minimumReleaseAge`.
+
+## License
+
+[MIT](LICENSE) © builtbystef
