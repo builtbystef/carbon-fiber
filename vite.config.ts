@@ -4,14 +4,18 @@ export default defineConfig({
   staged: {
     "*": "vp check --fix",
   },
-  fmt: {},
+  // Agent tooling (skills, local settings) — vendored content, not project
+  // source. Formatting it is noise, and it must not fail CI if committed.
+  fmt: {
+    ignorePatterns: ["**/.agents/**", "**/.claude/**"],
+  },
   lint: {
     plugins: ["typescript"],
     options: {
       typeAware: true,
       typeCheck: true,
     },
-    ignorePatterns: ["**/dist/**", "**/coverage/**"],
+    ignorePatterns: ["**/dist/**", "**/coverage/**", "**/.agents/**", "**/.claude/**"],
     overrides: [
       {
         // `plugins` in an override replaces the base list, so repeat it.
