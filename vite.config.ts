@@ -10,7 +10,9 @@ export default defineConfig({
     ignorePatterns: ["**/.agents/**", "**/.claude/**"],
   },
   lint: {
-    plugins: ["typescript"],
+    // Setting `plugins` here would replace oxlint's default set (eslint,
+    // typescript, unicorn, oxc). Leave it unset and only add plugins in
+    // overrides, where the list extends the defaults.
     options: {
       typeAware: true,
       typeCheck: true,
@@ -18,9 +20,8 @@ export default defineConfig({
     ignorePatterns: ["**/dist/**", "**/coverage/**", "**/.agents/**", "**/.claude/**"],
     overrides: [
       {
-        // `plugins` in an override replaces the base list, so repeat it.
         files: ["**/*.test.ts", "**/*.spec.ts"],
-        plugins: ["typescript", "vitest"],
+        plugins: ["vitest"],
       },
     ],
   },
