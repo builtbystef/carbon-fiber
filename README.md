@@ -64,8 +64,10 @@ Defined in `pnpm-workspace.yaml`:
 - `engineStrict`: Node version mismatch fails instead of warning
 
 CI (`.github/workflows/ci.yml`) uses least-privilege permissions, SHA-pinned
-actions, and a frozen lockfile. Dependabot runs weekly with a 4-day cooldown
-matching `minimumReleaseAge`.
+actions, and a frozen lockfile. `setup-vp` installs Vite+, Node, and pnpm and
+caches the store; the `vp run` task cache is restored and saved around the
+build. Dependabot runs weekly with a 4-day cooldown matching
+`minimumReleaseAge`.
 
 ## License
 
