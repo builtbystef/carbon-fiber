@@ -10,9 +10,6 @@ export default defineConfig({
     ignorePatterns: ["**/.agents/**", "**/.claude/**"],
   },
   lint: {
-    // Setting `plugins` here would replace oxlint's default set (eslint,
-    // typescript, unicorn, oxc). Leave it unset and only add plugins in
-    // overrides, where the list extends the defaults.
     options: {
       typeAware: true,
       typeCheck: true,
