@@ -30,7 +30,7 @@ minimumReleaseAge: 5760
 strictDepBuilds: true
 allowBuilds: {}
 
-# Transitive dependencies must come from trusted registries — no git or
+# Transitive dependencies must come from trusted registries: no git or
 # tarball URLs below the direct-dependency level.
 blockExoticSubdeps: true
 

@@ -4,7 +4,7 @@ export default defineConfig({
   staged: {
     "*": "vp check --fix",
   },
-  // Agent tooling (skills, local settings) — vendored content, not project
+  // Agent tooling (skills, local settings) is vendored content, not project
   // source. Formatting it is noise, and it must not fail CI if committed.
   fmt: {
     ignorePatterns: ["**/.agents/**", "**/.claude/**"],
