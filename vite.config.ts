@@ -4,17 +4,12 @@ export default defineConfig({
   staged: {
     "*": "vp check --fix",
   },
-  // Agent tooling (skills, local settings) is vendored content, not project
-  // source. Formatting it is noise, and it must not fail CI if committed.
-  fmt: {
-    ignorePatterns: ["**/.agents/**", "**/.claude/**"],
-  },
   lint: {
     options: {
       typeAware: true,
       typeCheck: true,
     },
-    ignorePatterns: ["**/dist/**", "**/coverage/**", "**/.agents/**", "**/.claude/**"],
+    ignorePatterns: ["**/dist/**", "**/coverage/**"],
     overrides: [
       {
         files: ["**/*.test.ts", "**/*.spec.ts"],
